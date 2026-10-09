@@ -92,14 +92,14 @@ export default function EditorialParallaxBreak() {
           The Sanctuary at Dawn
         </span>
 
-        <h2 className="font-editorial-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] text-cream-50">
+        <h2 className="font-editorial-heading text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.12] text-cream-50">
           &ldquo;There is a sacred quiet in the first pour before the world wakes up.&rdquo;
         </h2>
 
-        <div className="pt-2 flex items-center justify-center gap-3 text-xs sm:text-sm text-cream-300 font-serif italic">
-          <span className="h-px w-8 bg-caramel-400" />
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm text-cream-300 font-serif italic text-center">
+          <span className="h-px w-6 sm:w-8 bg-caramel-400 hidden sm:inline-block" />
           <span>7:00 AM • Natural Morning Light on Restoration Brick</span>
-          <span className="h-px w-8 bg-caramel-400" />
+          <span className="h-px w-6 sm:w-8 bg-caramel-400 hidden sm:inline-block" />
         </div>
       </div>
     </section>

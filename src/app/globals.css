@@ -44,6 +44,8 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -51,8 +53,12 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -153,5 +159,30 @@ body {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Touch-friendly horizontal scroll containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 

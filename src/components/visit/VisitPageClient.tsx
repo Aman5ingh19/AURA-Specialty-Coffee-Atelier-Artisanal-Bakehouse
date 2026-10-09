@@ -244,13 +244,13 @@ export default function VisitPageClient() {
 
           {/* Right Column: Interactive Table & Tasting Inquiry Form */}
           <div id="reservations" className="lg:col-span-7">
-            <div className="bg-cream-50 p-8 sm:p-10 rounded-3xl border border-subtle shadow-card">
-              <div className="mb-8">
+            <div className="bg-cream-50 p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-subtle shadow-card">
+              <div className="mb-6 sm:mb-8">
                 <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-caramel-700 font-semibold mb-2">
                   <Calendar className="w-4 h-4 text-caramel-600" />
                   <span>Table Inquiries & Private Tastings</span>
                 </div>
-                <h2 className="font-editorial-heading text-3xl sm:text-4xl text-espresso-950 font-normal">
+                <h2 className="font-editorial-heading text-2xl sm:text-4xl text-espresso-950 font-normal">
                   Reserve Your Experience
                 </h2>
                 <p className="text-xs sm:text-sm text-espresso-600 font-light mt-1">
@@ -259,7 +259,7 @@ export default function VisitPageClient() {
               </div>
 
               {isSubmitted ? (
-                <div className="p-8 rounded-2xl bg-cream-100 border border-caramel-500/40 space-y-6 text-center animate-in fade-in duration-300">
+                <div className="p-6 sm:p-8 rounded-2xl bg-cream-100 border border-caramel-500/40 space-y-6 text-center animate-in fade-in duration-300">
                   <div className="w-16 h-16 rounded-full bg-caramel-500/20 text-caramel-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
@@ -309,19 +309,19 @@ export default function VisitPageClient() {
                         notes: "",
                       });
                     }}
-                    className="text-xs font-semibold text-caramel-700 hover:text-caramel-800 underline underline-offset-4"
+                    className="text-xs font-semibold text-caramel-700 hover:text-caramel-800 underline underline-offset-4 min-h-[44px] inline-flex items-center"
                   >
                     Submit another inquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                   {/* Inquiry Type Tabs */}
                   <div>
                     <label className="block text-xs font-semibold uppercase tracking-wider text-espresso-800 mb-2">
                       Inquiry Category
                     </label>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                       {[
                         { id: "table", label: "Table (4+ Guests)" },
                         { id: "cupping", label: "Private Cupping" },
@@ -331,9 +331,9 @@ export default function VisitPageClient() {
                           key={item.id}
                           type="button"
                           onClick={() => setFormData({ ...formData, inquiryType: item.id })}
-                          className={`py-2 px-3 rounded-xl text-xs font-medium border text-center transition-all ${
+                          className={`py-2.5 px-3 rounded-xl text-xs font-medium border text-center transition-all min-h-[44px] flex items-center justify-center ${
                             formData.inquiryType === item.id
-                              ? "bg-espresso-950 text-cream-50 border-espresso-950"
+                              ? "bg-espresso-950 text-cream-50 border-espresso-950 shadow-sm"
                               : "bg-cream-100 hover:bg-cream-200/60 text-espresso-800 border-subtle"
                           }`}
                         >
@@ -354,7 +354,7 @@ export default function VisitPageClient() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Elena Vance"
-                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none transition-colors ${
+                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none transition-colors min-h-[44px] ${
                           formErrors.name ? "border-red-500" : "border-subtle focus:border-caramel-500"
                         }`}
                       />
@@ -374,7 +374,7 @@ export default function VisitPageClient() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="elena@example.com"
-                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none transition-colors ${
+                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none transition-colors min-h-[44px] ${
                           formErrors.email ? "border-red-500" : "border-subtle focus:border-caramel-500"
                         }`}
                       />
@@ -397,7 +397,7 @@ export default function VisitPageClient() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="(503) 555-0192"
-                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none transition-colors ${
+                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none transition-colors min-h-[44px] ${
                           formErrors.phone ? "border-red-500" : "border-subtle focus:border-caramel-500"
                         }`}
                       />
@@ -415,7 +415,7 @@ export default function VisitPageClient() {
                       <select
                         value={formData.partySize}
                         onChange={(e) => setFormData({ ...formData, partySize: e.target.value })}
-                        className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none"
+                        className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none min-h-[44px]"
                       >
                         <option value="1">1 Guest (Single Taster)</option>
                         <option value="2">2 Guests</option>
@@ -438,7 +438,7 @@ export default function VisitPageClient() {
                         type="date"
                         value={formData.date}
                         onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none transition-colors ${
+                        className={`w-full bg-cream-100 border rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none transition-colors min-h-[44px] ${
                           formErrors.date ? "border-red-500" : "border-subtle focus:border-caramel-500"
                         }`}
                       />
@@ -456,7 +456,7 @@ export default function VisitPageClient() {
                       <select
                         value={formData.time}
                         onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                        className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none"
+                        className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none min-h-[44px]"
                       >
                         <option value="08:00">08:00 AM (Early Roast)</option>
                         <option value="09:30">09:30 AM (Morning Warmth)</option>
@@ -478,13 +478,13 @@ export default function VisitPageClient() {
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="e.g. Birthday breakfast, gluten sensitivity, or preferred table in the sunlit back room..."
-                      className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-xs text-espresso-950 focus:outline-none"
+                      className="w-full bg-cream-100 border border-subtle focus:border-caramel-500 rounded-xl px-4 py-2.5 text-sm sm:text-xs text-espresso-950 focus:outline-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-espresso-950 hover:bg-caramel-600 text-cream-50 font-semibold py-3.5 rounded-full text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-2"
+                    className="w-full bg-espresso-950 hover:bg-caramel-600 text-cream-50 font-semibold py-3.5 rounded-full text-xs tracking-wider uppercase transition-colors shadow-sm flex items-center justify-center gap-2 min-h-[48px]"
                   >
                     <span>Submit Reservation Inquiry</span>
                     <ArrowUpRight className="w-4 h-4 text-caramel-400" />
@@ -501,17 +501,17 @@ export default function VisitPageClient() {
       </section>
 
       {/* Guest FAQ Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="text-center mb-10">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
+        <div className="text-center mb-8 sm:mb-10">
           <span className="font-editorial-subheading text-caramel-700 tracking-[0.25em] text-xs font-semibold block mb-2">
             Visitor Inquiries
           </span>
-          <h3 className="font-editorial-heading text-3xl sm:text-4xl text-espresso-950 font-normal">
+          <h3 className="font-editorial-heading text-2xl sm:text-4xl text-espresso-950 font-normal">
             Frequently Asked Questions
           </h3>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {FAQS.map((faq, idx) => {
             const isOpen = openFaq === idx;
             return (
@@ -521,9 +521,9 @@ export default function VisitPageClient() {
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4 focus:outline-none min-h-[52px]"
                 >
-                  <span className="font-serif text-lg font-medium text-espresso-950">
+                  <span className="font-serif text-base sm:text-lg font-medium text-espresso-950">
                     {faq.q}
                   </span>
                   <ChevronDown
@@ -534,7 +534,7 @@ export default function VisitPageClient() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-xs sm:text-sm text-espresso-700 font-light leading-relaxed border-t border-subtle/50 pt-4 animate-in fade-in duration-200">
+                  <div className="px-4 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-espresso-700 font-light leading-relaxed border-t border-subtle/50 pt-3 sm:pt-4 animate-in fade-in duration-200">
                     {faq.a}
                   </div>
                 )}

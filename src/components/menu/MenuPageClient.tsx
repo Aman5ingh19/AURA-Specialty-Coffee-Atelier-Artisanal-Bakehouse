@@ -112,16 +112,16 @@ export default function MenuPageClient() {
 
       {/* Barista Daily Pairing Spotlight */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 z-10 relative">
-        <div className="bg-espresso-950 text-cream-50 rounded-2xl p-6 sm:p-8 shadow-card border border-espresso-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 sm:gap-6">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-caramel-500/20 text-caramel-400 flex items-center justify-center shrink-0 border border-caramel-500/30">
-              <Coffee className="w-6 h-6 sm:w-7 sm:h-7" />
+        <div className="bg-espresso-950 text-cream-50 rounded-2xl p-5 sm:p-8 shadow-card border border-espresso-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6">
+          <div className="flex items-start sm:items-center gap-4 sm:gap-6">
+            <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-caramel-500/20 text-caramel-400 flex items-center justify-center shrink-0 border border-caramel-500/30 mt-1 sm:mt-0">
+              <Coffee className="w-5 h-5 sm:w-7 sm:h-7" />
             </div>
             <div>
               <span className="text-[10px] uppercase tracking-widest text-caramel-400 font-bold block mb-1">
                 Barista Morning Pairing
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-cream-50 font-medium">
+              <h3 className="font-serif text-lg sm:text-2xl text-cream-50 font-medium leading-snug">
                 24-Hour Kyoto Slow Drip & Normandy Butter Croissant
               </h3>
               <p className="text-xs sm:text-sm text-cream-300 font-light mt-1">
@@ -130,13 +130,13 @@ export default function MenuPageClient() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0">
-            <span className="font-serif text-2xl font-bold text-caramel-400">
+          <div className="flex items-center justify-between w-full md:w-auto gap-4 shrink-0 pt-2 md:pt-0 border-t border-espresso-850 md:border-0">
+            <span className="font-serif text-xl sm:text-2xl font-bold text-caramel-400">
               $11.50
             </span>
             <Link
               href="/visit"
-              className="bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-5 py-2.5 rounded-full text-xs tracking-wider transition-colors"
+              className="bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-5 py-2.5 rounded-full text-xs tracking-wider transition-colors min-h-[42px] flex items-center justify-center"
             >
               Order at Bar
             </Link>
@@ -145,16 +145,16 @@ export default function MenuPageClient() {
       </section>
 
       {/* Filter and Search Bar Section */}
-      <div className="sticky top-20 z-30 bg-cream-200/95 backdrop-blur-md border-b border-subtle mt-10 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="sticky top-[56px] sm:top-[68px] z-30 bg-cream-200/95 backdrop-blur-md border-b border-subtle mt-8 sm:mt-10 py-3.5 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 sm:space-y-4">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
             {/* Category Navigation Tabs */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 touch-pan-x px-0.5">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.value}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all shrink-0 min-h-[40px] flex items-center ${
                     activeCategory === cat.value
                       ? "bg-espresso-950 text-cream-50 shadow-sm"
                       : "bg-cream-100 hover:bg-cream-50 text-espresso-800 border border-subtle"
@@ -172,14 +172,14 @@ export default function MenuPageClient() {
                 placeholder="Search beans, notes, dishes..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-cream-50 border border-subtle focus:border-caramel-500 focus:outline-none rounded-full px-4 py-2 text-xs text-espresso-900 placeholder:text-espresso-400"
+                className="w-full bg-cream-50 border border-subtle focus:border-caramel-500 focus:outline-none rounded-full px-4 py-2.5 text-xs text-espresso-900 placeholder:text-espresso-400 min-h-[42px]"
               />
             </div>
           </div>
 
           {/* Dietary Filters */}
-          <div className="flex items-center gap-2 text-xs text-espresso-600 flex-wrap">
-            <span className="font-semibold text-espresso-800 text-[11px] uppercase tracking-wider mr-1">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-xs text-espresso-600 flex-wrap">
+            <span className="font-semibold text-espresso-800 text-[10px] sm:text-[11px] uppercase tracking-wider mr-1">
               Dietary Preference:
             </span>
             {(
@@ -194,7 +194,7 @@ export default function MenuPageClient() {
               <button
                 key={item.val}
                 onClick={() => setActiveDietary(item.val)}
-                className={`px-3 py-1 rounded-full text-[11px] font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-medium transition-all min-h-[36px] inline-flex items-center ${
                   activeDietary === item.val
                     ? "bg-caramel-600 text-cream-50"
                     : "bg-cream-100 hover:bg-cream-50 text-espresso-700 border border-subtle"

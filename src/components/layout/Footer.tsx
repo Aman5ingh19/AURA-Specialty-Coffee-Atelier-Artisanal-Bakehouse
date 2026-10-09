@@ -56,18 +56,18 @@ export default function Footer() {
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="space-y-2">
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email"
-                      className="bg-espresso-900 border border-espresso-750 focus:border-caramel-500 focus:outline-none text-cream-100 text-xs px-3.5 py-2.5 rounded-lg w-full placeholder:text-espresso-400 transition-colors"
+                      className="bg-espresso-900 border border-espresso-750 focus:border-caramel-500 focus:outline-none text-cream-100 text-xs px-3.5 py-3 sm:py-2.5 rounded-xl sm:rounded-lg w-full placeholder:text-espresso-400 transition-colors min-h-[44px]"
                       aria-label="Email for coffee newsletter"
                     />
                     <button
                       type="submit"
-                      className="bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors shrink-0"
+                      className="bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold text-xs px-5 py-3 sm:py-2.5 rounded-xl sm:rounded-lg transition-colors shrink-0 min-h-[44px] flex items-center justify-center"
                     >
                       Join
                     </button>
@@ -83,29 +83,29 @@ export default function Footer() {
             <span className="text-xs uppercase tracking-wider font-semibold text-caramel-400 block">
               Exploration
             </span>
-            <ul className="space-y-2.5 text-xs text-cream-300">
+            <ul className="space-y-2 text-xs text-cream-300">
               <li>
-                <Link href="/" className="hover:text-caramel-300 transition-colors">
+                <Link href="/" className="inline-block py-1 hover:text-caramel-300 transition-colors min-h-[32px]">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="hover:text-caramel-300 transition-colors">
+                <Link href="/menu" className="inline-block py-1 hover:text-caramel-300 transition-colors min-h-[32px]">
                   Seasonal Menu
                 </Link>
               </li>
               <li>
-                <Link href="/our-story" className="hover:text-caramel-300 transition-colors">
+                <Link href="/our-story" className="inline-block py-1 hover:text-caramel-300 transition-colors min-h-[32px]">
                   Our Story & Terroir
                 </Link>
               </li>
               <li>
-                <Link href="/visit" className="hover:text-caramel-300 transition-colors">
+                <Link href="/visit" className="inline-block py-1 hover:text-caramel-300 transition-colors min-h-[32px]">
                   Visit & Hours
                 </Link>
               </li>
               <li>
-                <Link href="/visit#reservations" className="hover:text-caramel-300 transition-colors">
+                <Link href="/visit#reservations" className="inline-block py-1 hover:text-caramel-300 transition-colors min-h-[32px]">
                   Table Reservations
                 </Link>
               </li>
@@ -147,7 +147,7 @@ export default function Footer() {
                   href={CAFE_INFO.address.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-caramel-400 hover:text-caramel-300 mt-1 font-medium"
+                  className="inline-flex items-center gap-1 text-caramel-400 hover:text-caramel-300 mt-1 font-medium py-1 min-h-[32px]"
                 >
                   <span>Google Maps</span>
                   <ArrowUpRight className="w-3 h-3" />
@@ -157,13 +157,13 @@ export default function Footer() {
               <div className="pt-1 space-y-1">
                 <a
                   href={`tel:${CAFE_INFO.contact.phone}`}
-                  className="block text-cream-300 hover:text-caramel-400 transition-colors"
+                  className="inline-block py-1 text-cream-300 hover:text-caramel-400 transition-colors min-h-[32px]"
                 >
                   {CAFE_INFO.contact.phoneDisplay}
                 </a>
                 <a
                   href={`mailto:${CAFE_INFO.contact.email}`}
-                  className="block text-cream-400 hover:text-caramel-400 transition-colors"
+                  className="inline-block py-1 text-cream-400 hover:text-caramel-400 transition-colors min-h-[32px]"
                 >
                   {CAFE_INFO.contact.email}
                 </a>
@@ -173,25 +173,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-espresso-400">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-espresso-400 text-center md:text-left">
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} {CAFE_INFO.fullName}. All rights reserved.</span>
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {CAFE_INFO.socials.map((soc) => (
               <a
                 key={soc.label}
                 href={soc.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-caramel-400 transition-colors text-xs font-medium"
+                className="hover:text-caramel-400 transition-colors text-xs font-medium py-1 min-h-[32px] inline-flex items-center"
               >
                 {soc.label}
               </a>
             ))}
-            <span className="text-espresso-700">|</span>
-            <span className="text-[11px] text-espresso-400">
+            <span className="text-espresso-700 hidden sm:inline">|</span>
+            <span className="text-[11px] text-espresso-400 basis-full sm:basis-auto text-center">
               Roasted locally with 100% clean convection energy.
             </span>
           </div>

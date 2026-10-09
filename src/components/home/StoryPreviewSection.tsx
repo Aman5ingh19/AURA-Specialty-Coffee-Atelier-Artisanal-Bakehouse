@@ -109,7 +109,7 @@ export default function StoryPreviewSection() {
               </span>
             </div>
 
-            <h2 className="font-editorial-heading text-3xl sm:text-5xl lg:text-6xl text-espresso-950 font-normal leading-[1.12]">
+            <h2 className="font-editorial-heading text-2xl sm:text-5xl lg:text-6xl text-espresso-950 font-normal leading-[1.12]">
               Born from a quiet rebellion against rushed mornings.
             </h2>
 
@@ -130,8 +130,8 @@ export default function StoryPreviewSection() {
             </div>
 
             {/* Roaster Quote */}
-            <div className="p-5 rounded-2xl bg-cream-200/70 border-l-4 border-caramel-500">
-              <p className="font-serif italic text-base sm:text-lg text-espresso-900 leading-snug">
+            <div className="p-4 sm:p-5 rounded-2xl bg-cream-200/70 border-l-4 border-caramel-500">
+              <p className="font-serif italic text-sm sm:text-lg text-espresso-900 leading-snug">
                 &ldquo;We don&apos;t chase bitter strength. We chase clarity, floral sweetness, and the kind of quiet comfort that anchors your whole day.&rdquo;
               </p>
               <span className="block text-xs uppercase tracking-wider text-caramel-700 font-semibold mt-2">
@@ -142,7 +142,7 @@ export default function StoryPreviewSection() {
             <div className="pt-2">
               <Link
                 href="/our-story"
-                className="inline-flex items-center gap-2 bg-espresso-950 text-cream-50 hover:bg-caramel-600 px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider transition-colors shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-espresso-950 text-cream-50 hover:bg-caramel-600 px-6 sm:px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider transition-colors shadow-sm min-h-[44px]"
               >
                 <span>Read Full Story & Farming Partners</span>
                 <ArrowUpRight className="w-4 h-4 text-caramel-400" />

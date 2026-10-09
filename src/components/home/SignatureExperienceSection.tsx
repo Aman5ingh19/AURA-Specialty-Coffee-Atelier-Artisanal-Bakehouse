@@ -98,20 +98,20 @@ export default function SignatureExperienceSection() {
         </div>
 
         {/* Tab Selector Buttons */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 pb-4 border-b border-espresso-850">
+        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar pb-3 mb-8 sm:mb-10 border-b border-espresso-850 touch-pan-x">
           {SIGNATURE_EXPERIENCES.map((item, idx) => (
             <button
               key={item.id}
               onClick={() => handleSelect(idx)}
-              className={`px-5 py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2.5 ${
+              className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 sm:gap-2.5 shrink-0 min-h-[44px] ${
                 activeIndex === idx
                   ? "bg-caramel-500 text-espresso-950 font-semibold shadow-lg scale-[1.02]"
                   : "bg-espresso-900 text-cream-300 hover:bg-espresso-800 hover:text-cream-100 border border-espresso-800"
               }`}
             >
-              <span>{item.name}</span>
+              <span className="whitespace-nowrap">{item.name}</span>
               <span
-                className={`text-[11px] px-2 py-0.5 rounded-full ${
+                className={`text-[10px] sm:text-[11px] px-2 py-0.5 rounded-full shrink-0 ${
                   activeIndex === idx
                     ? "bg-espresso-950 text-caramel-300"
                     : "bg-espresso-800 text-cream-400"
@@ -124,7 +124,7 @@ export default function SignatureExperienceSection() {
         </div>
 
         {/* Interactive Feature Display */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-espresso-900/60 rounded-3xl p-6 sm:p-10 border border-espresso-800 shadow-2xl backdrop-blur-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-espresso-900/60 rounded-3xl p-5 sm:p-10 border border-espresso-800 shadow-2xl backdrop-blur-sm">
           {/* Visual Showcase Side */}
           <div
             ref={imageCardRef}
@@ -139,16 +139,16 @@ export default function SignatureExperienceSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-black/20" />
 
-            <div className="absolute top-4 left-4 bg-espresso-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs text-caramel-300 border border-espresso-800 flex items-center gap-1.5">
+            <div className="absolute top-4 left-4 bg-espresso-950/80 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs text-caramel-300 border border-espresso-800 flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-caramel-400" />
               <span>Limited Daily Allocation</span>
             </div>
 
             <div className="absolute bottom-4 left-4 right-4 text-cream-100">
-              <span className="text-[11px] uppercase tracking-widest text-caramel-400 font-semibold block">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-widest text-caramel-400 font-semibold block">
                 Origin Terroir
               </span>
-              <p className="font-serif text-sm sm:text-base text-cream-50 font-medium">
+              <p className="font-serif text-xs sm:text-base text-cream-50 font-medium">
                 {current.originTerroir}
               </p>
             </div>
@@ -157,34 +157,34 @@ export default function SignatureExperienceSection() {
           {/* Editorial Specs Side */}
           <div
             ref={contentCardRef}
-            className="lg:col-span-6 space-y-6 flex flex-col justify-between"
+            className="lg:col-span-6 space-y-5 sm:space-y-6 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-espresso-800">
                 <span className="text-xs uppercase tracking-[0.2em] text-caramel-400 font-semibold">
                   {current.subtitle}
                 </span>
-                <span className="font-serif text-2xl text-cream-50 font-bold">
+                <span className="font-serif text-xl sm:text-2xl text-cream-50 font-bold">
                   {current.price}
                 </span>
               </div>
 
-              <h3 className="font-editorial-heading text-3xl sm:text-4xl text-cream-50 font-normal mt-4 mb-3">
+              <h3 className="font-editorial-heading text-2xl sm:text-4xl text-cream-50 font-normal mt-4 mb-3">
                 {current.name}
               </h3>
 
-              <p className="text-sm sm:text-base text-cream-300 font-light leading-relaxed">
+              <p className="text-xs sm:text-base text-cream-300 font-light leading-relaxed">
                 {current.description}
               </p>
             </div>
 
             {/* Process Extraction Detail */}
-            <div className="p-4 rounded-xl bg-espresso-950/70 border border-espresso-800">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-espresso-950/70 border border-espresso-800">
               <div className="flex items-center gap-2 text-xs text-caramel-400 font-medium mb-1">
                 <Flame className="w-3.5 h-3.5" />
                 <span>Extraction Technique</span>
               </div>
-              <p className="text-xs text-cream-200 font-mono">
+              <p className="text-[11px] sm:text-xs text-cream-200 font-mono">
                 {current.process}
               </p>
             </div>
@@ -194,11 +194,11 @@ export default function SignatureExperienceSection() {
               <span className="block text-xs uppercase tracking-wider text-cream-400 mb-2 font-medium">
                 Sensory Profile Notes
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {current.tastingNotes.map((note) => (
                   <span
                     key={note}
-                    className="px-3 py-1 rounded-full text-xs bg-espresso-800 text-cream-100 border border-espresso-750 flex items-center gap-1.5"
+                    className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs bg-espresso-800 text-cream-100 border border-espresso-750 flex items-center gap-1.5"
                   >
                     <Droplets className="w-3 h-3 text-caramel-400" />
                     <span>{note}</span>
@@ -208,10 +208,10 @@ export default function SignatureExperienceSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/menu"
-                className="inline-flex items-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 px-6 py-3 rounded-full text-xs font-semibold tracking-wider transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 px-6 py-3.5 rounded-full text-xs font-semibold tracking-wider transition-colors shadow-sm min-h-[44px]"
               >
                 <span>View Complete Menu</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -219,7 +219,7 @@ export default function SignatureExperienceSection() {
 
               <Link
                 href="/visit"
-                className="text-xs text-cream-300 hover:text-caramel-400 transition-colors underline underline-offset-4"
+                className="inline-flex items-center justify-center text-xs text-cream-300 hover:text-caramel-400 transition-colors underline underline-offset-4 py-2 min-h-[40px]"
               >
                 Experience at the bar
               </Link>

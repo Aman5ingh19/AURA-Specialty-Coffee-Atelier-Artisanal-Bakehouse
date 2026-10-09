@@ -302,8 +302,8 @@ export default function StoryPageClient() {
 
       {/* CTA to visit */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12">
-        <div className="p-10 rounded-3xl bg-espresso-950 text-cream-50 border border-espresso-800 space-y-6">
-          <h3 className="font-editorial-heading text-3xl sm:text-4xl font-normal text-cream-50">
+        <div className="p-6 sm:p-10 rounded-2xl sm:rounded-3xl bg-espresso-950 text-cream-50 border border-espresso-800 space-y-5 sm:space-y-6">
+          <h3 className="font-editorial-heading text-2xl sm:text-4xl font-normal text-cream-50">
             Taste our story at the bar.
           </h3>
           <p className="text-xs sm:text-sm text-cream-300 font-light max-w-md mx-auto">
@@ -313,7 +313,7 @@ export default function StoryPageClient() {
           <div className="pt-2">
             <Link
               href="/visit"
-              className="inline-flex items-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-7 py-3 rounded-full text-xs tracking-wider transition-colors shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-7 py-3.5 rounded-full text-xs tracking-wider transition-colors shadow-sm min-h-[44px]"
             >
               <span>Visit Us in the Pearl District</span>
               <ArrowUpRight className="w-4 h-4" />

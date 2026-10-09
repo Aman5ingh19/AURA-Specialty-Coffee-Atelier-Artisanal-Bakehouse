@@ -78,7 +78,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-cream-200 text-espresso-950 font-sans selection:bg-caramel-500 selection:text-cream-50">
         <AnnouncementBar />
         <Navbar />
-        <main className="flex-grow pt-16 sm:pt-20">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

@@ -26,34 +26,34 @@ export default function TestimonialsSection() {
           {TESTIMONIALS.map((item, idx) => (
             <div
               key={idx}
-              className="bg-cream-50 p-8 rounded-2xl border border-subtle shadow-soft flex flex-col justify-between relative group hover:border-caramel-500/50 transition-colors"
+              className="bg-cream-50 p-5 sm:p-8 rounded-2xl border border-subtle shadow-soft flex flex-col justify-between relative group hover:border-caramel-500/50 transition-colors"
             >
-              <Quote className="w-8 h-8 text-caramel-400/40 mb-4" />
+              <Quote className="w-7 h-7 sm:w-8 sm:h-8 text-caramel-400/40 mb-3 sm:mb-4" />
 
               {/* Star Rating */}
-              <div className="flex items-center gap-1 mb-4 text-caramel-500">
+              <div className="flex items-center gap-1 mb-3 sm:mb-4 text-caramel-500">
                 {[...Array(item.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-caramel-500" />
+                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-caramel-500" />
                 ))}
               </div>
 
               {/* Quote Content */}
-              <blockquote className="font-serif italic text-base sm:text-lg text-espresso-900 leading-relaxed mb-6">
+              <blockquote className="font-serif italic text-sm sm:text-lg text-espresso-900 leading-relaxed mb-5 sm:mb-6">
                 &ldquo;{item.quote}&rdquo;
               </blockquote>
 
               {/* Author & Source */}
-              <div className="pt-4 border-t border-subtle flex items-center justify-between">
+              <div className="pt-3 sm:pt-4 border-t border-subtle flex items-center justify-between gap-2">
                 <div>
                   <h4 className="font-sans font-semibold text-xs sm:text-sm text-espresso-950">
                     {item.author}
                   </h4>
-                  <p className="text-[11px] text-espresso-600">
+                  <p className="text-[10px] sm:text-[11px] text-espresso-600">
                     {item.role}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-1 text-[10px] text-olive-600 font-mono bg-olive-500/10 px-2 py-0.5 rounded">
+                <div className="flex items-center gap-1 text-[10px] text-olive-600 font-mono bg-olive-500/10 px-2 py-0.5 rounded shrink-0">
                   <CheckCircle2 className="w-3 h-3 text-olive-600" />
                   <span>{item.source}</span>
                 </div>

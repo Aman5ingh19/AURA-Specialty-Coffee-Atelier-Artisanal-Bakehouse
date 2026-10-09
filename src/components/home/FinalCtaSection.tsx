@@ -28,14 +28,14 @@ export default function FinalCtaSection() {
           <span>Slow Mornings Begin Here</span>
         </div>
 
-        <h2 className="font-editorial-heading text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-cream-50">
+        <h2 className="font-editorial-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] text-cream-50">
           Step into warmth.
           <span className="block italic text-caramel-400 font-serif">
             Take your first slow sip.
           </span>
         </h2>
 
-        <p className="text-base sm:text-lg text-cream-200 font-light max-w-xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-lg text-cream-200 font-light max-w-xl mx-auto leading-relaxed">
           Whether you need twenty uninterrupted minutes with a book or an
           editorial hand-pour pulled to perfection, our doors are open every
           morning at 7:00 AM.
@@ -44,7 +44,7 @@ export default function FinalCtaSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <Link
             href="/visit"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-8 py-4 rounded-full text-xs sm:text-sm tracking-wider transition-all shadow-glow hover:scale-105 duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-caramel-500 hover:bg-caramel-400 text-espresso-950 font-semibold px-8 py-4 rounded-full text-xs sm:text-sm tracking-wider transition-all shadow-glow hover:scale-105 duration-300 min-h-[48px]"
           >
             <span>Reserve a Table or Walk In</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function FinalCtaSection() {
 
           <Link
             href="/menu"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-espresso-900/80 hover:bg-espresso-800 text-cream-100 border border-espresso-700 px-8 py-4 rounded-full text-xs sm:text-sm font-medium tracking-wider transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-espresso-900/80 hover:bg-espresso-800 text-cream-100 border border-espresso-700 px-8 py-4 rounded-full text-xs sm:text-sm font-medium tracking-wider transition-colors min-h-[48px]"
           >
             <span>Explore Current Roasts</span>
           </Link>
